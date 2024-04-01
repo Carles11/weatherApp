@@ -10,7 +10,21 @@ const Tab = createBottomTabNavigator()
 
 const Tabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'grey',
+        tabBarStyle: { backgroundColor: 'lightblue' },
+        headerStyle: {
+          backgroundColor: 'lightblue',
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 25,
+          color: 'tomato',
+        },
+      }}
+    >
       <Tab.Screen
         name={'Current'}
         component={CurrentWeather}
