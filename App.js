@@ -1,18 +1,19 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import CurrentWeather from './src/screens/CurrentWeather.js'
-import UpcommingWeather from './src/screens/UpcommingWeather.js'
-import City from './src/screens/City.js'
+
+import { NavigationContainer } from '@react-navigation/native'
+import Tabs from './src/components/Tabs.js'
+
 const App = () => {
   return (
-    <View style={styles.mainContainer}>
-      {/* <CurrentWeather /> */}
-      <City />
-    </View>
+    <NavigationContainer
+      screenOptions={{
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'grey',
+      }}
+    >
+      <Tabs />
+    </NavigationContainer>
   )
 }
 
-const styles = StyleSheet.create({
-  mainContainer: { flex: 1 },
-})
 export default App
