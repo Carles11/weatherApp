@@ -42,9 +42,6 @@ export const useGetWeather = () => {
     const result = setCurrentLocation()
       // make sure to catch any error
       .catch(console.error)
-
-    // what will be logged to the console?
-    console.log({ result })
   }, [lat, lon])
   return [loading, error, weather]
 }
