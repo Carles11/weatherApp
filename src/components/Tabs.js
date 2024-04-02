@@ -14,19 +14,19 @@ const Tabs = ({ weather }) => {
       screenOptions={{
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'grey',
-        tabBarStyle: { backgroundColor: 'lightblue' },
+        tabBarStyle: { backgroundColor: 'orange' },
         headerStyle: {
-          backgroundColor: 'lightblue',
+          backgroundColor: 'orange',
         },
         headerTitleStyle: {
           fontWeight: 'bold',
           fontSize: 25,
-          color: 'tomato',
+          color: 'white',
         },
       }}
     >
       <Tab.Screen
-        name={'Current'}
+        name={'Current Weather'}
         options={{
           tabBarLabel: ({ focused }) => (
             <Text style={{ color: focused ? 'tomato' : 'black' }}>Home</Text>
@@ -43,7 +43,7 @@ const Tabs = ({ weather }) => {
         {() => <CurrentWeather weatherData={weather.list[0]} />}
       </Tab.Screen>
       <Tab.Screen
-        name={'Upcomming'}
+        name={'Upcomming Weather'}
         options={{
           tabBarLabel: ({ focused }) => (
             <Text style={{ color: focused ? 'tomato' : 'black' }}>
@@ -62,7 +62,7 @@ const Tabs = ({ weather }) => {
         {() => <UpcommingWeather weatherData={weather.list} />}
       </Tab.Screen>
       <Tab.Screen
-        name={'City'}
+        name={'Your current city weather'}
         options={{
           tabBarLabel: ({ focused }) => (
             <Text style={{ color: focused ? 'tomato' : 'black' }}>City</Text>

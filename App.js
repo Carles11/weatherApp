@@ -5,7 +5,6 @@ import Tabs from './src/components/Tabs.js'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import { useGetWeather } from './src/hooks/useGetWeather.js'
 import ErrorComponent from './src/components/ErrorComponent.js'
-//  api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 const App = () => {
   const [loading, error, weather] = useGetWeather()

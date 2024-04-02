@@ -5,7 +5,6 @@ import {
   View,
   Text,
   FlatList,
-  StatusBar,
   ImageBackground,
 } from 'react-native'
 import ListItem from '../components/ListItem'
@@ -42,7 +41,7 @@ const UpcommingWeather = ({ weatherData }) => {
           renderItem={renderItem}
           keyExtractor={(item) => item.dt_txt}
           ItemSeparatorComponent={() => (
-            <View style={{ backgroundColor: 'red', height: 2 }} />
+            <View style={{ backgroundColor: 'grey', height: 2 }} />
           )}
           ListEmptyComponent={<Empty />}
         />
@@ -54,7 +53,6 @@ const UpcommingWeather = ({ weatherData }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: 'royalblue',
   },
   image: {
