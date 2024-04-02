@@ -10,7 +10,7 @@ import ErrorComponent from './src/components/ErrorComponent.js'
 const App = () => {
   const [loading, error, weather] = useGetWeather()
 
-  if (weather && weather.list) {
+  if (weather && weather.list && !loading) {
     return (
       <NavigationContainer>
         <Tabs weather={weather} />
