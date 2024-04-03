@@ -16,6 +16,9 @@
       "distribution": "internal",
       "ios": {
         "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_WEATHER_API_KEY": "38780473b8834e1038931e1b21f55a62"
       }
     },
     "production": { "node": "18.18.0" }
