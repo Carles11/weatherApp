@@ -1,7 +1,7 @@
 export const weatherType = {
   Thunderstorm: {
     icon: 'zap',
-    message: 'It could get noisy',
+    message: 'A cubierto',
     backgroundColor: '#000000',
     color: 'white',
   },
