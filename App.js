@@ -7,7 +7,7 @@ import { useGetWeather } from './src/hooks/useGetWeather.js'
 import ErrorComponent from './src/components/ErrorComponent.js'
 
 const App = () => {
-  const [loading, error, weather] = useGetWeather()
+  const [loading, error, weather, apiError] = useGetWeather()
 
   if (weather && weather.list && !loading) {
     return (
@@ -20,7 +20,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       {error ? (
-        <ErrorComponent error={error} />
+        <ErrorComponent error={error} apiError={apiError} />
       ) : (
         <ActivityIndicator size="large" color={'blue'} />
       )}

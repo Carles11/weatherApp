@@ -6,6 +6,7 @@ import * as Location from 'expo-location'
 export const useGetWeather = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [apiError, setApiError] = useState(null)
   const [weather, setWeather] = useState([])
   const [lat, setLat] = useState([])
   const [lon, setLon] = useState([])
@@ -13,9 +14,10 @@ export const useGetWeather = () => {
   const fetchWeatherData = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.EXPO_PUBLIC_WEATHER_API_KEY}&units=metric`
+        `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.EXPO_PUBLIC_WEATHER_API_KEY}&units=metric`
       )
       console.log({ response })
+      setApiError(response)
       const data = await response.json()
       setWeather(data)
     } catch (error) {
@@ -42,5 +44,5 @@ export const useGetWeather = () => {
 
     setCurrentLocation()
   }, [lat, lon])
-  return [loading, error, weather]
+  return [loading, error, weather, apiError]
 }
