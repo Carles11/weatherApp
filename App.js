@@ -20,7 +20,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       {error ? (
-        <ErrorComponent />
+        <ErrorComponent error={error} />
       ) : (
         <ActivityIndicator size="large" color={'blue'} />
       )}
